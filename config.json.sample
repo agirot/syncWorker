@@ -1,0 +1,20 @@
+{
+  "log_path": ".",
+  "binary": "echo",
+  "command": "/var/foo/bar command:test",
+  "args": "--in=%v --out=%v",
+  "args_to_replace": [
+    [
+      "foo",
+      "bar"
+    ],
+    [
+      "fromage",
+      "baguette"
+    ],
+    [
+      "pain",
+      "béret"
+    ]
+  ]
+}
