@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/agirot/syncWorker)](https://goreportcard.com/badge/github.com/agirot/syncWorker)
 # syncWorker
 Simple program to parallelize exec command and redirect output with metadata.<br>
 In my case a set of looong symfony (php framework) console command.
