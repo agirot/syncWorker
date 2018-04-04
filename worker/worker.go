@@ -1,13 +1,14 @@
 package worker
 
 import (
+	"encoding/json"
 	"fmt"
-	"github.com/agirot/syncWorker/config"
-	"github.com/gin-gonic/gin/json"
 	"os"
 	"os/exec"
 	"sync"
 	"time"
+
+	"github.com/agirot/syncWorker/config"
 )
 
 // LogFileName name of generated log file
@@ -68,14 +69,12 @@ func (j *Job) archiveWorkerLog() error {
 	if err != nil {
 		return err
 	}
-	if _, err := f.Write(j.writeLog()); err != nil {
+	if _, err = f.Write(j.writeLog()); err != nil {
 		return err
 	}
-	if err := f.Close(); err != nil {
-		return err
-	}
+	err = f.Close()
 
-	return nil
+	return err
 }
 
 func (j *Job) writeLog() []byte {
@@ -86,5 +85,6 @@ func (j *Job) writeLog() []byte {
 	if err != nil {
 		return []byte(err.Error())
 	}
+
 	return b
 }

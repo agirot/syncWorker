@@ -2,8 +2,9 @@ package config
 
 import (
 	"encoding/json"
-	flag "github.com/spf13/pflag"
 	"os"
+
+	flag "github.com/spf13/pflag"
 )
 
 // Config content current loaded config
